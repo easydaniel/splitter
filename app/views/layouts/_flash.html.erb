@@ -1,0 +1,10 @@
+<% if flash.present? %>
+  <div class="ui container" style="margin-top: 30px;">
+    <% flash.each do |key, value| %>
+      <div class='<%= flash_class(key) %> closable'>
+        <i class="close icon"></i>
+        <%= value %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,6 @@
+<%= form_for(:loan) do |f| %>
+  <%= f.select :from_id, User.all.pluck(:name, :id), prompt: 'From' %>
+  <%= f.select :to_id, User.all.pluck(:name, :id), prompt: 'To' %>
+  <%= f.number_field :amount, in: 1..1000000 %>
+  <%= f.submit 'Submit' %>
+<% end %>

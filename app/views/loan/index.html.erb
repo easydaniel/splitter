@@ -1,0 +1,6 @@
+<ul>
+  <% @loans.each do |l| %>
+    <li><%= l.to_json %></li>
+  <% end %>
+</ul>
+<%= link_to 'New', loan_new_path %>

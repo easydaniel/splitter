@@ -1,0 +1,40 @@
+<%= form_tag item_new_path do %>
+  <%= select_tag :from_ids,
+      options_from_collection_for_select(User.all, :id, :name),
+      { prompt: 'from users',
+        multiple: true,
+        class: 'ui search dropdown from' } %>
+  <%= select_tag :to_ids,
+      options_from_collection_for_select(User.all, :id, :name),
+      { prompt: 'to users',
+        multiple: true,
+        class: 'ui search dropdown to' } %>
+  <div class="ui form">
+    <%= text_field_tag :name, nil, class: 'field', placeholder: 'name' %>
+  </div>
+  <%= submit_tag 'Submit', class: 'submit_form' %>
+<% end %>
+
+<div class="ui modal">
+  <div class="header">
+    Amount
+  </div>
+  <div class="content">
+    <div class="description">
+      <div class="ui form">
+        <div class="field">
+          <label>Amount</label>
+          <input type="number" name="amount" placeholder="Amount">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui black deny button">
+      cancel
+    </div>
+    <div class="ui positive right button">
+      submit
+    </div>
+  </div>
+</div>

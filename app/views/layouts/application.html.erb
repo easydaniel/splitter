@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Splitter</title>
+    <%= csrf_meta_tags %>
+
+    <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/#{Jquery::Rails::JQUERY_VERSION}/jquery.min.js" %>
+    <script>window.jQuery || document.write('<script src="<%= javascript_path("jquery.min") %>"><\/script>')</script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/flash' %>
+    <%= yield %>
+  </body>
+</html>
